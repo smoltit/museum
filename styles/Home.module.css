@@ -20,12 +20,10 @@
 .middle {
     width: 80%;
     margin: 0 auto;
-    padding: 10vh 0;
 }
 .info {
     background-color: white;
-    /* width: 80%;
-    margin: 10vh auto; */
+    padding: 10vh 0 6vh;
     display: flex;
     justify-content: space-between;
 }
@@ -39,6 +37,7 @@
 }
 .middle h2 {
     font-size: 42px;
+
 } 
 .middle p {
     font-size: 20px;
@@ -50,9 +49,80 @@
 }
 .news {
     width: 100%;
-    height: 40rem;
+    height: max-content;
     background-color: #f1f5ed;
+    padding-bottom: 10vh;
 }
 .time * {
     text-align: right;
+}
+.events {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+
+}
+.event img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.text {
+    background-color: white;
+    padding: 2rem;
+}
+.text p {
+    font-size: 15px;
+}
+.text h3 {
+    padding: .7rem 0;
+}
+.big {
+    padding: 10vh 0 6vh;
+}
+.big > * {
+    padding: 1rem;
+}
+
+.images {
+    width: 100%;
+    height: 80vh;
+    /* background-color: red; */
+    background: url("../public/bg0.jpeg") 0 0 no-repeat, url("../public/bg1.jpeg") 0 0 repeat;
+    /* background-repeat: no-repeat, repeat; */
+    background-size: contain;
+}
+.form {
+    height: 3rem;
+}
+.form input {
+    width: 40%;
+    font-size: 14px;
+    /* padding: 1rem; */
+    height: 100%;
+    padding: 0 1rem;
+    border: none;
+    background-color: white;
+    margin: 0 1rem;
+    border-radius: 3px;
+}
+.form input:active {
+    border: none;
+}
+.form button {
+    font-size: 14px;
+    height: 100%;
+    border: none;
+    background-color: #b8caa5;
+    color: white;
+    padding: 0 1rem;
+    transition: 150ms ease-out;
+    border-radius: 3px;
+}
+.form button:hover {
+    cursor: pointer;
+    background-color: #a9bb95;
+}
+.form button:active {
+    background-color: #96a882;
 }
