@@ -5,109 +5,109 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Музей-майстерня І.П.Кавалерідзе</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header>
+        <a href="">Музей-майстерня І.П.Кавалерідзе</a>
+        <nav>
+          <a href="">Виставки</a>
+          <a href="">Експозиція</a>
+          <a href="">Про музей</a>
+          <a href="">Контакти</a>
+        </nav>
+        <div className={styles.time}>
+          <p>Вівторок-Неділя 11:00 — 18:00</p>
+          {/* <p>Понеділок — вихідний</p> */}
+          <p>Каса 11:00 — 17:00</p>
+        </div>
+      </header>
+
       <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className={styles.bg}></div>
+        <div className={`${styles.info} ${styles.middle}`}>
+          <div className={styles.in}>
+            <h2>Інформація для відвідувачів</h2>
+            <p>Андріївський узвіз, б. 21, Київ</p>
+            <div>
+              <p>Вівторок-неділя</p>
+              <p>11:00 — 18:00</p>
+              <p>Понеділок</p> 
+              <p>вихідний</p>
+            </div>
+          </div>
+          <div className={styles.prices}>
+            <div>
+              <p>Вхідний квиток для громадян України — 50 ₴</p>
+              <p>Вхідний квиток для іноземних відвідувачів — 50 ₴</p>
+              <p>Вхідний квиток для пільгових категорій громадян (діти, учні, студенти та пенсіонери) — 25 ₴</p>
+              <p>Екскурсія (вхідний квиток купується окремо) — 100 ₴</p>
+            </div>
+            <div>
+              <p>Кінозйомка експозицій — 200 ₴</p>
+              <p>Фотозйомка експозицій — 150 ₴</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.news}>
+          <div className={styles.middle}>
+            <h2>Виставки та події</h2>
+            <p>Музей регулярно організовує мистецькі події. Слідкуйте за оновленнями</p>
+            <div>
+              <img src="" alt="" />
+              <p className={styles.date}>19 липня — 10 серпня</p>
+              <h3>Плитка Азулежу</h3>             
+              <p>Колекція традиційної португальської плитки XVII – XVIII століть</p>
+            </div>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          </div>
+          <div className={styles.middle}>
+            <h2>Підпишіться на наші новини</h2>
+            <p>Ми будемо надсилати вам інформацію по нашим новинам, майбутнім виставкам та подіям</p>
+          </div>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
+
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.5386847961117!2d30.515964219573465!3d50.45957667960175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4213fff423%3A0xe569ffc208d1ba47!2z0JzRg9C30LXQuS3QvNCw0LnRgdGC0LXRgNC90Y8g0IYu0J8u0JrQsNCy0LDQu9C10YDRltC00LfQtQ!5e0!3m2!1suk!2sua!4v1689758302667!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
       </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
+      
       <style jsx global>{`
         html,
         body {
-          padding: 0;
-          margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+          width: 100%;
         }
         * {
           box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+      `}</style>
+
+      <style jsx>{`
+        header {
+          width: 100%;
+          padding: 1.3rem 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: fixed;
+          box-shadow: 0 0 5px grey;
+          background-color: white;
+          z-index: 1000;
+        }
+        header nav a {
+          padding: 1rem 1.5rem;
         }
       `}</style>
     </div>
