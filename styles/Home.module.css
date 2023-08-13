@@ -20,10 +20,12 @@
 .middle {
     width: 80%;
     margin: 0 auto;
+    padding: 3rem 0;
 }
+
 .info {
     background-color: white;
-    padding: 10vh 0 6vh;
+    /* padding: 10vh 0 6vh; */
     display: flex;
     justify-content: space-between;
 }
@@ -51,7 +53,7 @@
     width: 100%;
     height: max-content;
     background-color: #f1f5ed;
-    padding-bottom: 10vh;
+    /* padding-bottom: 10vh; */
 }
 .time * {
     text-align: right;
@@ -78,12 +80,11 @@
     padding: .7rem 0;
 }
 .big {
-    padding: 10vh 0 6vh;
+    /* padding: 10vh 0 6vh; */
 }
 .big > * {
-    padding: 1rem;
+    padding: 1rem 0;
 }
-
 .images {
     width: 100%;
     height: 80vh;
@@ -92,37 +93,100 @@
     /* background-repeat: no-repeat, repeat; */
     background-size: contain;
 }
-.form {
-    height: 3rem;
-}
-.form input {
+.tour img {
+    height: 100%;
     width: 40%;
-    font-size: 14px;
-    /* padding: 1rem; */
-    height: 100%;
-    padding: 0 1rem;
-    border: none;
-    background-color: white;
-    margin: 0 1rem;
-    border-radius: 3px;
+    object-fit: cover;
 }
-.form input:active {
-    border: none;
-}
-.form button {
-    font-size: 14px;
+.tourtext {
+    width: 60%;
+    padding: 0 2rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    border: 1px solid #c9d1c1;
+    /* border-bottom: none; */
+}
+.tourtext h3 {
+    font-size: 30px;
+    margin-bottom: 2rem;
+}
+.tour {
+    height: 300px;
+    margin-bottom: 2rem;
+}
+.collections { 
+	display: flex;
+    justify-content: space-between;
+}
+.third {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 30%;
+}
+.collection img {
+    width: 100%;
+}
+.collection p {
+    font-size: 15px;
+}
+.collection h3 {
+    margin: .7rem 0;
+}
+.map {
+    filter: brightness(.8);
     border: none;
-    background-color: #b8caa5;
+    position: relative;
+    bottom: -1rem;
+}
+.contacts {
+    z-index: 1000;
+    background-color: #282b24;
     color: white;
-    padding: 0 1rem;
-    transition: 150ms ease-out;
-    border-radius: 3px;
+    padding: 3rem 4rem;
+    width: 30%;
 }
-.form button:hover {
-    cursor: pointer;
-    background-color: #a9bb95;
+.contacts > * {
+    padding: 0 1rem 1rem;
 }
-.form button:active {
-    background-color: #96a882;
+.support {
+    width: 100%;
+    /* max-width: 90%; */
+    margin: 3rem auto 2rem;
+    text-align: center;
+    /* border: 1px solid black; */
+    padding: 2rem 1rem 3rem;
+}
+.support h3 {
+    font-size: 30px;
+}
+.support p {
+    margin: 1rem 0 2.5rem;
+}
+.support a {
+    transition: 300ms ease;
+    padding: 1rem 2rem;
+    /* background-color: rgb(241, 245, 237); */
+    border: 1px solid rgb(24, 38, 28);
+}
+.support a:hover {
+    transition: 300ms ease;
+    background-color: rgb(24, 38, 28);
+    /* border-color: rgb(96, 135, 106); */
+    color: white;
+}
+.space {
+    /* height: 4rem; */
+    position: relative;
+    top: -4rem;
+}
+.help {
+    background-color: rgb(241, 245, 237);
+}
+.help .support {
+    background-color: white;
 }
