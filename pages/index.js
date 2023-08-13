@@ -214,8 +214,8 @@ export default function Home() {
       </main>
 
       <footer>
-        <div id="contacts">
-          <iframe className={styles.map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.99839435694!2d30.514499511697625!3d50.45975458657587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4213fff423%3A0xe569ffc208d1ba47!2z0JzRg9C30LXQuS3QvNCw0LnRgdGC0LXRgNC90Y8g0IYu0J8u0JrQsNCy0LDQu9C10YDRltC00LfQtQ!5e0!3m2!1suk!2sua!4v1690404695440!5m2!1suk!2sua" width="100%" height="600px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="contacts" className={styles.contactsContainer}>
+          <iframe className={styles.mapBackground} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.99839435694!2d30.514499511697625!3d50.45975458657587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4213fff423%3A0xe569ffc208d1ba47!2z0JzRg9C30LXQuS3QvNCw0LnRgdGC0LXRgNC90Y8g0IYu0J8u0JrQsNCy0LDQu9C10YDRltC00LfQtQ!5e0!3m2!1suk!2sua!4v1690404695440!5m2!1suk!2sua" width="100%" height="600px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div className={styles.contacts}>
             <h2>Контакти</h2>
             <div>

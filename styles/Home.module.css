@@ -137,18 +137,30 @@
 .collection h3 {
     margin: .7rem 0;
 }
-.map {
+.contactsContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+.mapBackground {
     filter: brightness(.8);
     border: none;
-    position: relative;
-    bottom: -1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    z-index: -1;
 }
 .contacts {
-    z-index: 1000;
-    background-color: #282b24;
+    z-index: 10;
+    background-color: rgb(24, 38, 28);
     color: white;
-    padding: 3rem 4rem;
-    width: 30%;
+    padding: 3rem;
+    width: 33%;
+    position: absolute;
+    right: 5rem;
+    top: 8.5rem;
 }
 .contacts > * {
     padding: 0 1rem 1rem;
