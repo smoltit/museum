@@ -1,0 +1,19 @@
+.image {
+    height: 30vh;
+    width: 90%;
+    object-fit: cover;
+}
+.text {
+    width: 90%;
+    background-color: white;
+    padding: 2rem;
+}
+.text p {
+    font-size: 15px;
+}
+.text h3 {
+    padding: .7rem 0;
+}
+.event {
+    margin: 0 5% 1rem;
+}

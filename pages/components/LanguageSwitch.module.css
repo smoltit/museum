@@ -1,0 +1,25 @@
+/* LanguageSwitch.module.css */
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+  }
+  
+  .lang {
+    color: rgb(65, 38, 188);
+  }
+  
+  .lang:hover {
+    cursor: pointer;
+  }
+  .lang:active {
+    color: rgb(48, 31, 126);
+  }
+  
