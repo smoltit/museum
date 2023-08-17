@@ -5,6 +5,7 @@ import imgg from "../public/tour0.jpeg";
 import { useRouter } from 'next/router';
 import LanguageSwitch from './components/LanguageSwitch';
 import EventSlider from './components/EventSlider';
+import { Link } from 'react-scroll';
 
 const eventsData = [
   {
@@ -66,12 +67,22 @@ export default function Home() {
 
       <header>
         <a href="">{language === 'ua' ? 'Музей-майстерня І.П.Кавалерідзе' : 'I.P. Kavaleridze Museum-Workshop'}</a>
-        <nav>
-          <a href="#events">{language === 'ua' ? 'Події' : 'Events'}</a>
-          <a href="#collections">{language === 'ua' ? 'Колекції' : 'Collections'}</a>
-          <a href="#about-us">{language === 'ua' ? 'Про музей' : 'About us'}</a>
-          <a href="#tours">{language === 'ua' ? 'Екскурсії' : 'Tours'}</a>
-          <a href="#help">{language === 'ua' ? 'Допомогти' : 'Help us'}</a>
+        <nav className={styles.nav}>
+          <Link to="events" smooth={true} duration={500}>
+            {language === 'ua' ? 'Події' : 'Events'}
+          </Link>
+          <Link to="collections" smooth={true} duration={500}>
+            {language === 'ua' ? 'Колекції' : 'Collections'}
+          </Link>
+          <Link to="about-us" smooth={true} duration={500}>
+            {language === 'ua' ? 'Про музей' : 'About us'}
+          </Link>
+          <Link to="tours" smooth={true} duration={500}>
+            {language === 'ua' ? 'Екскурсії' : 'Tours'}
+          </Link>
+          <Link to="help" smooth={true} duration={500}>
+            {language === 'ua' ? 'Допомогти' : 'Help us'}
+          </Link>
         </nav>
         <div className={styles.right}>
           <div className={styles.time}>
@@ -84,19 +95,28 @@ export default function Home() {
       </header>
 
 
+
       <main>
         <div className={styles.bg}></div>
         <div className={`${styles.info} ${styles.middle}`}>
           <div className={styles.in}>
-          <h2>
+            <h2>
               {language === 'ua' ? 'Інформація для відвідувачів' : 'Info for Visitors'}
             </h2>
             <p>{language === 'ua' ? 'Андріївський узвіз 21, Київ' : 'Andriivsky Uzviz 21, Kyiv'}</p>
-            <div>
-              <p>{language === 'ua' ? 'Вівторок-неділя' : 'Tuesday-Sunday'}</p>
-              <p>11:00 — 18:00</p>
-              <p>{language === 'ua' ? 'Понеділок' : 'Monday'}</p>
-              <p>{language === 'ua' ? 'вихідний' : 'closed'}</p>
+            <div className={styles.time_in}>
+              <div className={styles.time_info}>
+                <p>{language === 'ua' ? 'Вівторок-неділя:' : 'Tuesday-Sunday:'}</p>
+                <p>11:00 — 18:00</p>
+              </div>
+              <div className={styles.time_info}>
+                <p>{language === 'ua' ? 'Покупка квитків:' : 'Monday:'}</p>
+                <p>11:00 — 17:00</p>
+              </div>
+              <div className={styles.time_info}>
+                <p>{language === 'ua' ? 'Понеділок:' : 'Monday:'}</p>
+                <p>{language === 'ua' ? 'вихідний' : 'closed'}</p>
+              </div>
             </div>
           </div>
           <div className={styles.prices}>
@@ -125,11 +145,11 @@ export default function Home() {
           <div className={styles.middle}>
             <div className={styles.big}>
               <h2>{language === 'ua' ? 'Виставки та події' : 'Exhibitions and Events'}</h2>
-              <p>
+              <h3>
                 {language === 'ua'
                   ? 'Музей регулярно організовує мистецькі події. Слідкуйте за оновленнями'
                   : 'The museum regularly organizes artistic events. Stay updated'}
-              </p>
+              </h3>
             </div>
             <div className={styles.events}>
               <EventSlider events={eventsData} language={language} />
@@ -139,79 +159,79 @@ export default function Home() {
         </div>
         <div className={styles.images}></div>
         <div className={styles.space} id="collections"></div>
-          <div className={styles.middle}>
-            <div className={styles.big}>
-              <h2>{language === 'ua' ? 'Колекції' : 'Collections'}</h2>
-              <p>
-                {language === 'ua'
-                  ? "Експозиція музею-майстерні включає творчий спадок видатного скульптора, режисера та драматурга І.П. Кавалерідзе"
-                  : "The museum-mastery exhibition includes the creative legacy of the prominent sculptor, director, and playwright I.P. Kavaleridze"}
-              </p>
-              <div className={styles.collections}>
-                <div className={styles.third}>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3733-6462-4736-a361-303539663865/9-1.jpg" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3266-6130-4935-a339-373735626165/72-2.jpg" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
+        <div className={styles.middle}>
+          <div className={styles.big}>
+            <h2>{language === 'ua' ? 'Колекції' : 'Collections'}</h2>
+            <h3>
+              {language === 'ua'
+                ? "Експозиція музею-майстерні включає творчий спадок видатного скульптора, режисера та драматурга І.П. Кавалерідзе"
+                : "The museum-mastery exhibition includes the creative legacy of the prominent sculptor, director, and playwright I.P. Kavaleridze"}
+            </h3>
+            <div className={styles.collections}>
+              <div className={styles.third}>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3733-6462-4736-a361-303539663865/9-1.jpg" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
                 </div>
-                <div className={styles.third}>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3133-6239-4238-b461-343265313539/65-1.jpg" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3730-6438-4866-a261-333433656231/__.jpg" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3266-6130-4935-a339-373735626165/72-2.jpg" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
                 </div>
-                <div className={styles.third}>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3262-3764-4362-b665-353165636632/DSC_2670_.jpg" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
-                  <div className={styles.collection}>
-                    <img src="https://static.tildacdn.com/tild3235-6335-4234-b735-643233316365/noroot.png" alt="" />
-                    <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
-                    <p>
-                      {language === 'ua'
-                        ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
-                        : "Monuments of sculptural art of Japan, China, Korea, and India"}
-                    </p>
-                  </div>
+              </div>
+              <div className={styles.third}>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3133-6239-4238-b461-343265313539/65-1.jpg" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
+                </div>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3730-6438-4866-a261-333433656231/__.jpg" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
+                </div>
+              </div>
+              <div className={styles.third}>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3262-3764-4362-b665-353165636632/DSC_2670_.jpg" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
+                </div>
+                <div className={styles.collection}>
+                  <img src="https://static.tildacdn.com/tild3235-6335-4234-b735-643233316365/noroot.png" alt="" />
+                  <h3>{language === 'ua' ? 'Скульптура заходу' : 'Western Sculpture'}</h3>
+                  <p>
+                    {language === 'ua'
+                      ? "Пам'ятники скульптурного мистецтва Японії, Китаю, Кореї та Індії"
+                      : "Monuments of sculptural art of Japan, China, Korea, and India"}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-              <div className={styles.space} id="about-us"></div>
+        </div>
+        <div className={styles.space} id="about-us"></div>
         <div className={styles.news}>
           <div className={styles.middle}>
 
@@ -245,11 +265,11 @@ export default function Home() {
         <div className={styles.middle}>
           <div className={styles.big}>
             <h2>{language === 'ua' ? 'Екскурсії' : 'Tours'}</h2>
-            <p>
+            <h3>
               {language === 'ua'
                 ? 'В музеї проводяться екскурсії по скульптурно-парковому ансамблю, експозиціям та виставкам.'
                 : 'Guided tours are available in the museum, covering the sculpture park ensemble, exhibitions, and displays.'}
-            </p>
+            </h3>
           </div>
           <a href="" target="_blank" className={styles.tourLink}>
             <div className={styles.tour}>
@@ -394,9 +414,6 @@ export default function Home() {
           box-shadow: 0 0 5px grey;
           background-color: white;
           z-index: 1000;
-        }
-        header nav a {
-          padding: 1rem 1.5rem;
         }
         label {
           color: blue;
