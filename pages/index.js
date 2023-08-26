@@ -1,50 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import imgg from "../public/tour0.jpeg";
 import { useRouter } from 'next/router';
 import LanguageSwitch from './components/LanguageSwitch';
 import EventSlider from './components/EventSlider';
 import { Link } from 'react-scroll';
-
-const eventsData = [
-  {
-    imageSrc: 'https://static.tildacdn.com/tild3566-3437-4238-b161-663732356564/Depositphotos_291138.jpg',
-    dateUa: '19 липня — 10 серпня',
-    dateEn: 'July 19 - August 10',
-    titleUa: 'Плитка Азулежу',
-    titleEn: 'Azulejo Tiles',
-    descriptionUa: 'Колекція традиційної португальської плитки XVII – XVIII століть',
-    descriptionEn: 'Collection of traditional Portuguese tiles from the 17th and 18th centuries',
-  },
-  {
-    imageSrc: 'https://static.tildacdn.com/tild3866-6365-4162-b231-636630646464/image-from-rawpixel-.jpg',
-    dateUa: '19 липня — 10 серпня',
-    dateEn: 'July 19 - August 10',
-    titleUa: 'Плитка Азулежу',
-    titleEn: 'Azulejo Tiles',
-    descriptionUa: 'Колекція традиційної португальської плитки XVII – XVIII століть',
-    descriptionEn: 'Collection of traditional Portuguese tiles from the 17th and 18th centuries',
-  },
-  {
-    imageSrc: 'https://static.tildacdn.com/tild6662-6130-4962-a537-363438343266/peter-ivey-hansen-15.jpg',
-    dateUa: '19 липня — 10 серпня',
-    dateEn: 'July 19 - August 10',
-    titleUa: 'Плитка Азулежу',
-    titleEn: 'Azulejo Tiles',
-    descriptionUa: 'Колекція традиційної португальської плитки XVII – XVIII століть',
-    descriptionEn: 'Collection of traditional Portuguese tiles from the 17th and 18th centuries',
-  },
-  {
-    imageSrc: 'https://static.tildacdn.com/tild3262-3764-4362-b665-353165636632/DSC_2670_.jpg',
-    dateUa: '19 липня — 10 серпня',
-    dateEn: 'July 19 - August 10',
-    titleUa: 'Плитка Азулежу',
-    titleEn: 'Azulejo Tiles',
-    descriptionUa: 'Колекція традиційної португальської плитки XVII – XVIII століть',
-    descriptionEn: 'Collection of traditional Portuguese tiles from the 17th and 18th centuries',
-  },
-];
+import eventsData from '../public/eventsData.json'
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter();
@@ -273,10 +235,7 @@ export default function Home() {
           </div>
           <a href="" target="_blank" className={styles.tourLink}>
             <div className={styles.tour}>
-              <img
-                src="https://static.tildacdn.com/tild3231-3239-4862-b861-666235646639/FAEB0433-5FED-477C-9.jpg"
-                alt=""
-              />
+              <Image src="/images/tour0.jpeg"  width="1000" height="1000" />
               <div className={styles.tourtext}>
                 <h3>{language === 'ua' ? 'Оглядова екскурсія по музею' : 'Museum Overview Tour'}</h3>
                 <p>
@@ -291,10 +250,8 @@ export default function Home() {
           </a>
           <a href="" target="_blank" className={styles.tourLink}>
             <div className={styles.tour}>
-              <img
-                src="https://static.tildacdn.com/tild6332-3732-4138-a165-623037623838/noroot.png"
-                alt=""
-              />
+            <Image src="/images/tour1.png"  width="1000" height="1000" />
+
               <div className={styles.tourtext}>
                 <h3>{language === 'ua' ? 'Скульптура в залах Музею' : 'Sculpture in the Museum Halls'}</h3>
                 <p>
@@ -309,10 +266,8 @@ export default function Home() {
           </a>
           <a href="" target="_blank" className={styles.tourLink}>
             <div className={styles.tour}>
-              <img
-                src="https://static.tildacdn.com/tild3933-3264-4766-b232-356663646538/noroot.png"
-                alt=""
-              />
+            <Image src="/images/tour2.png"  width="1000" height="1000" />
+
               <div className={styles.tourtext}>
                 <h3>{language === 'ua' ? 'Скульптурно-парковий ансамбль музею' : 'Sculpture Park Ensemble Tour'}</h3>
                 <p>
@@ -389,7 +344,8 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
-
+          max-width: 100%;
+          overflow-x: hidden;
         }
         * {
           box-sizing: border-box;

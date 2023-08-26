@@ -6,7 +6,8 @@
 .text {
     width: 90%;
     background-color: white;
-    padding: 2rem;
+    height: 180px;
+    padding: 2rem;   
 }
 .text p {
     font-size: 15px;
@@ -16,4 +17,13 @@
 }
 .event {
     margin: 0 5% 1rem;
+}
+.event::selection {
+    color: none;
+    background: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.event::-moz-selection {
+    color: none;
+    background: none;
 }

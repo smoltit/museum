@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './EventSlider.module.css';
+import Image from 'next/image';
 
 const EventSlider = ({ events, language }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -37,9 +38,9 @@ const EventSlider = ({ events, language }) => {
     <Slider {...settings} className={styles.slider}>
       {events.map((event, index) => (
         <div key={index} className={styles.event}>
-          <img src={event.imageSrc} alt={event.title} className={styles.image} />
+          <Image src={event.imageName} width='500' height='500' className={styles.image} />
           <div className={styles.text}>
-            <p className={styles.date}>{language === 'ua' ? event.dateUa : event.dateEn}</p>
+            <p className={styles.date}>{event.date}</p>
             <h3>{language === 'ua' ? event.titleUa : event.titleEn}</h3>
             <p>{language === 'ua' ? event.descriptionUa : event.descriptionEn}</p>
           </div>
