@@ -8,10 +8,6 @@ export default async function handler(req, res) {
 
   try {
     const updatedEventsData = req.body;
-    const { imageSrc, ...eventData } = req.body;
-    eventData.imageName = imageSrc;
-
-    // Construct the path to the eventsData.json file
     const eventsDataFilePath = path.join(process.cwd(), 'public', 'eventsData.json');
 
     // Write the updated data to the file

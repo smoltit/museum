@@ -1,13 +1,15 @@
 .image {
     height: 30vh;
-    width: 90%;
+    width: 100%;
     object-fit: cover;
+    box-shadow: 4px -3px 10px #e2e0e0;
 }
 .text {
-    width: 90%;
+    width: 100%;
     background-color: white;
-    height: 180px;
+    /* height: 180px; */
     padding: 2rem;   
+    box-shadow: 4px -3px 10px #e2e0e0;
 }
 .text p {
     font-size: 15px;
@@ -16,14 +18,8 @@
     padding: .7rem 0;
 }
 .event {
-    margin: 0 5% 1rem;
+    padding: 0 5% 1rem;
 }
-.event::selection {
-    color: none;
-    background: none;
-    -webkit-tap-highlight-color: transparent;
-}
-.event::-moz-selection {
-    color: none;
-    background: none;
+.past {
+    filter: brightness(.9);
 }

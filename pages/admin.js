@@ -1,46 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import eventsData from '../public/eventsData.json';
 import axios from 'axios'; // Make sure to import axios
+import styles from '../styles/Home.module.css';
+
 
 const AdminPage = () => {
+  // const [image, setImage] = useState(null);
   const [newEvent, setNewEvent] = useState({
     imageName: '',
     titleUa: '',
     titleEn: '',
     descriptionUa: '',
     descriptionEn: '',
-    date: ''
-    // ... other properties
+    dateStart: '',
+    dateEnd: ''
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const updatedEventsData = [...eventsData, newEvent];
-    console.log(updatedEventsData); // Check if the data is correct
-    console.log('Form submitted');
     try {
       await axios.post('/api/update-events', updatedEventsData);
-      // Clear the form
       setNewEvent({
         imageName: '',
         titleUa: '',
         titleEn: '',
         descriptionUa: '',
         descriptionEn: '',
-        date: '',
-        // ... other properties
+        dateStart: '',
+        dateEnd: ''
       });
-      // Clear the image input
-      const imageInput = document.querySelector('input[type="file"]');
-      if (imageInput) {
-        imageInput.value = '';
+
+      if (image) {
+        image.value = '';
       }
     } catch (error) {
       console.error('Error updating events:', error);
     }
+    location.reload();
   };
   
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setNewEvent((prevEvent) => ({
@@ -48,35 +47,56 @@ const AdminPage = () => {
       [name]: value,
     }));
   };
-  const handleImageChange = (event) => {
-    const selectedImage = event.target.files[0];
+
+  // const handleImageChange = (event) => {
+  //   const selectedImage = event.target.files[0];
+  //   if (selectedImage) {
+  //     const imageName = `/images/${selectedImage.name}`; // Format the image name
+  //     setNewEvent((prevEvent) => ({
+  //       ...prevEvent,
+  //       imageName: imageName, // Store the formatted image name
+  //     }));
+  //   }
+  // }
+
+  // const uploadToServer = async (event) => {        
+  //   handleImageChange;
+  //   const body = new FormData();
+  //   body.append("file", image);    
+  //   const response = await fetch("/api/file", {
+  //     method: "POST",
+  //     body
+  //   });
+  // };
+
   
-    if (selectedImage) {
-      const imageName = `/images/${selectedImage.name}`; // Format the image name
-      setNewEvent((prevEvent) => ({
-        ...prevEvent,
-        imageName: imageName, // Store the formatted image name
-      }));
-    }
-  };
   
 
   return (
     
     <div>
-      <form onSubmit={handleFormSubmit}>
+      <form id='myform' onSubmit={handleFormSubmit}>
         <input
           type="file"
-          name="image"
+          name="file"
           accept="image/*"
-          onChange={handleImageChange}
+          // onChange={uploadToServer}
+          // ref={imageInputRef}
           required={true}
         />
         <input
-          type="text"
-          name="date" // Add the appropriate property name
+          type="date"
+          name="dateStart" // Add the appropriate property name
           placeholder="дата"
-          value={newEvent.date} // Bind the value to state
+          value={newEvent.dateStart} // Bind the value to state
+          onChange={handleInputChange} // Call handleInputChange on change
+          required={true}
+        />
+        <input
+          type="date"
+          name="dateEnd" // Add the appropriate property name
+          placeholder="дата"
+          value={newEvent.dateEnd} // Bind the value to state
           onChange={handleInputChange} // Call handleInputChange on change
           required={true}
         />
@@ -114,6 +134,7 @@ const AdminPage = () => {
         />
 
         <button type="submit">Зберегти</button>
+
       </form>
       <style jsx global>{`
         html,
